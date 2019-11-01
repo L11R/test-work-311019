@@ -7,7 +7,7 @@ import (
 
 	"github.com/artur0us/test-work-311019/entities/accounts"
 	"github.com/artur0us/test-work-311019/entities/notes"
-	notesMdls "github.com/artur0us/test-work-311019/entities/notes/mdls"
+	"github.com/artur0us/test-work-311019/entities/notes/mdls"
 	"github.com/artur0us/test-work-311019/servers/httpserver/constants"
 	"github.com/labstack/echo"
 )
@@ -25,7 +25,7 @@ func RegNotes(echoSrv *echo.Echo) {
 			answer.EntityStatus = -1
 			answer.Message = "Authentication error!"
 		} else {
-			note := notesMdls.NewNote{
+			note := mdls.NewNote{
 				Title: c.FormValue("title"),
 				Body:  c.FormValue("body"),
 			}
